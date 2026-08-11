@@ -50,6 +50,20 @@ jobs:
         # https://github.com/orgs/community/discussions/192970
         MAX_RETRIES: 5
 
+    - name: Generate streak stats (dark)
+      uses: DenverCoder1/github-readme-streak-stats@main
+      with:
+        options: user=dhruvds12&theme=github-dark-blue&hide_border=true
+        path: streak-dark.svg
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Generate streak stats (light)
+      uses: DenverCoder1/github-readme-streak-stats@main
+      with:
+        options: user=dhruvds12&theme=default&hide_border=true
+        path: streak-light.svg
+        token: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Commit to the repo
       run: |
         git add .
